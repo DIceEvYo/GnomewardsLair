@@ -1,4 +1,4 @@
-# CavedInHobos
+# Gnomeward's Lair
 
 ### [Commands To Know] ###
 Before executing command locate the terminal to your desired workspace:
