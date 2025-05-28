@@ -5,7 +5,7 @@ Before executing command locate the terminal to your desired workspace:
 - git clone link (Creates a clone of the contents from github to your machine)
 
 Now CD into the project folder:
-- cd CavedInHobos
+- cd GnomewardsLair
 
 Congrats, now you can use the commands! 
 
