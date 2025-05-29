@@ -10,6 +10,7 @@ var levels: Array[PackedScene] = [
 # used to prevent spam rotation
 var ignore_input := false
 
+var player_slime_scene: PackedScene = preload("res://scenes/player_slime.tscn")
 
 func _ready() -> void:
 	current_level = levels[0].instantiate()
@@ -17,6 +18,13 @@ func _ready() -> void:
 	# 32x32 tilemap with 16x16 tiles = 512x512.
 	# all maps should be 32x32 to remain centered/on screen.
 	current_level.position = Vector2(-256, -256)
+	
+	var spawn_tile_coords: Array[Vector2i] = current_level.get_used_cells_by_id(1)
+	for i in spawn_tile_coords.size():
+		var player_slime: CharacterBody2D = player_slime_scene.instantiate()
+		add_child(player_slime)
+		# this is quite the wombo combo, not pretty but it gets the job done
+		player_slime.global_position = current_level.to_global(current_level.map_to_local(spawn_tile_coords[i]))
 
 
 func _input(event: InputEvent) -> void:
