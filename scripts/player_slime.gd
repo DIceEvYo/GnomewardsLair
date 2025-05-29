@@ -13,7 +13,6 @@ func _physics_process(delta: float) -> void:
 		previous_y = velocity.y
 	elif previous_y > 100:
 		velocity.y = -previous_y * bounce_strength
-		print(velocity.y)
 		previous_y = velocity.y
 	
 	velocity = velocity.move_toward(Vector2.ZERO, delta * friction)
