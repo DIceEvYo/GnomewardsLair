@@ -36,7 +36,14 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action("rotate_right"):
 		ignore_input = true
 		_rotate_tween(rotation_degrees + 90)
-
+	elif event is InputEventScreenTouch:
+		if event.double_tap:
+			if event.position.x > 480:
+				_rotate_tween(rotation_degrees + 90)
+				ignore_input = true
+			else:
+				_rotate_tween(rotation_degrees - 90)
+				ignore_input = true
 
 # physics objects must be a child of rotater to prevent phasing through objects
 func _rotate_tween(rotate_to: float) -> void:
