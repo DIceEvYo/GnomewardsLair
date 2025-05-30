@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4tvmqu3n6wjt"]
+[gd_scene load_steps=6 format=3 uid="uid://b4tvmqu3n6wjt"]
 
 [ext_resource type="Script" uid="uid://dithippvnjacp" path="res://scripts/player_slime.gd" id="1_531f3"]
 [ext_resource type="Texture2D" uid="uid://pp16p10q57vf" path="res://icon.svg" id="1_j6t72"]
+[ext_resource type="Shader" uid="uid://dgrep8wp0pdkf" path="res://scripts/player_slime.gdshader" id="2_fj311"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_531f3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7wq0"]
+shader = ExtResource("2_fj311")
 
 [node name="PlayerSlime" type="CharacterBody2D"]
 collision_layer = 2
@@ -15,5 +19,5 @@ script = ExtResource("1_531f3")
 shape = SubResource("RectangleShape2D_531f3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
+material = SubResource("ShaderMaterial_y7wq0")
 texture = ExtResource("1_j6t72")
