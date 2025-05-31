@@ -1,14 +1,18 @@
 extends CharacterBody2D
-
+class_name PlayerSlime
 
 var bounce_strength: float = 0.5
 var friction: float = 20
 # used to help calculate bounce
 var previous_y: float = 0
 
+var shape_size: float
+@onready var collision_shape_player := $CollisionShape2D
+@onready var collision_shape_area2d := $Area2D/CollisionShape2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
-	var sprite: Sprite2D = $Sprite2D
+	shape_size = collision_shape_player.shape.size.x
 	# add a little randomness to the shader
 	sprite.set_instance_shader_parameter("meltness", randf_range(1.8, 2.2))
 	sprite.set_instance_shader_parameter("how_deep", randf_range(0.8, 1.2))
@@ -28,3 +32,18 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(Vector2.ZERO, delta * friction)
 	
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == self:
+		return
+	elif body is PlayerSlime:
+		# arbitary way to ensure that if two players collide only one of them gets freed, not both
+		if name > body.name:
+			# increase size to match combined area
+			shape_size = sqrt((shape_size ** 2.0) + (body.shape_size ** 2.0))
+			sprite.scale = Vector2((shape_size + 1) * 0.01, (shape_size + 1) * 0.01)
+			print(sprite.scale)
+			collision_shape_player.shape.size = Vector2(shape_size, shape_size)
+			collision_shape_area2d.shape.size = Vector2(shape_size + 1, shape_size + 1)
+			body.queue_free()
