@@ -1,5 +1,10 @@
-[gd_scene format=3 uid="uid://cwn2vdc6cpjns"]
+[gd_scene load_steps=2 format=3 uid="uid://cwn2vdc6cpjns"]
+
+[ext_resource type="Script" uid="uid://bvvbddx0xqyln" path="res://scripts/map_rotater.gd" id="1_lnu2h"]
 
 [node name="Game" type="Node2D"]
+texture_filter = 1
 
 [node name="MapContainer" type="Node2D" parent="."]
+position = Vector2(480, 270)
+script = ExtResource("1_lnu2h")
