@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4tvmqu3n6wjt"]
 
 [ext_resource type="Script" uid="uid://dithippvnjacp" path="res://scripts/player_slime.gd" id="1_531f3"]
-[ext_resource type="Texture2D" uid="uid://pp16p10q57vf" path="res://icon.svg" id="1_j6t72"]
 [ext_resource type="Shader" uid="uid://dgrep8wp0pdkf" path="res://scripts/player_slime.gdshader" id="2_fj311"]
+[ext_resource type="Texture2D" uid="uid://bwnrfs22x073r" path="res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx4.png" id="3_fj311"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y7wq0"]
 shader = ExtResource("2_fj311")
@@ -22,9 +22,9 @@ platform_floor_layers = 4294967293
 script = ExtResource("1_531f3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 material = SubResource("ShaderMaterial_y7wq0")
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("1_j6t72")
+texture = ExtResource("3_fj311")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_531f3")
