@@ -1,6 +1,17 @@
 extends CharacterBody2D
 class_name PlayerSlime
 
+var EWW = [
+	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx4.png",
+	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx3.png",
+	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx2.png",
+	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx1.png",
+	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx.png",
+]
+
+#FREEZA FREEZA FREEZA FREEZA!
+var form = 0
+
 var bounce_strength: float = 0.5
 var friction: float = 20
 # used to help calculate bounce
@@ -16,6 +27,7 @@ var shape_size: float
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
+	sprite.texture = load(EWW[form])
 	shape_size = collision_shape_player.shape.size.x
 	# add a little randomness to the shader
 	sprite.set_instance_shader_parameter("meltness", randf_range(1.8, 2.2))
@@ -45,13 +57,22 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	elif body is PlayerSlime:
 		# arbitary way to ensure that if two players collide only one of them gets freed, not both
 		if name > body.name:
-			# increase size to match combined area
-			shape_size = sqrt((shape_size ** 2.0) + (body.shape_size ** 2.0))
-			sprite.scale = Vector2((shape_size + 1) * 0.01, (shape_size + 1) * 0.01)
-			collision_shape_player.shape.size = Vector2(shape_size, shape_size)
-			collision_shape_area2d.shape.size = Vector2(shape_size + 1, shape_size + 1)
-			progress += 1 + body.progress
+			if body.has_node("Sprite2D") and has_node("Sprite2D"):
+				var 俺のtexture = $Sprite2D.texture
+				var bruh_texture = body.get_node("Sprite2D").texture
+				if 俺のtexture == bruh_texture:
+					# increase size to match combined area
+					shape_size = sqrt((shape_size ** 2.0) + (body.shape_size ** 2.0))
+					sprite.scale = Vector2((shape_size*5.88 + 1) * 0.01, (shape_size*5.88 + 1) * 0.01)
+					collision_shape_player.shape.size = Vector2(shape_size, shape_size)
+					collision_shape_area2d.shape.size = Vector2(shape_size + 1, shape_size + 1)
+					progress += 1 + body.progress
+					body.queue_free()
+					if form < EWW.size()-1:
+						form += 1
+						sprite.texture = load(EWW[form])
+					
 			# - 1 because progress_cap is max slimes, but the last one is win
 			if progress >= progress_cap - 1:
 				print("you win nerd")
-			body.queue_free()
+			
