@@ -43,7 +43,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			# increase size to match combined area
 			shape_size = sqrt((shape_size ** 2.0) + (body.shape_size ** 2.0))
 			sprite.scale = Vector2((shape_size + 1) * 0.01, (shape_size + 1) * 0.01)
-			print(sprite.scale)
 			collision_shape_player.shape.size = Vector2(shape_size, shape_size)
 			collision_shape_area2d.shape.size = Vector2(shape_size + 1, shape_size + 1)
 			body.queue_free()
