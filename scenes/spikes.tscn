@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bowptdnlkcy3i"]
+
+[ext_resource type="Texture2D" uid="uid://xw5ni7bs7yh7" path="res://assets/spikes.png" id="1_5pg7g"]
+[ext_resource type="Script" uid="uid://0gx8052ogg1i" path="res://scripts/spikes.gd" id="1_xbcdo"]
+[ext_resource type="AudioStream" uid="uid://cxa4uokb6yhph" path="res://assets/lose.wav" id="3_bflj7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbcdo"]
+radius = 8.0
+
+[node name="Spikes" type="Area2D"]
+texture_filter = 1
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_xbcdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xbcdo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5pg7g")
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bflj7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

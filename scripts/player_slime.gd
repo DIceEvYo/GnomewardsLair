@@ -6,6 +6,10 @@ var friction: float = 20
 # used to help calculate bounce
 var previous_y: float = 0
 
+# increased for each merge, used to check win condidion
+var progress: int = 0
+# based on how many slimes there are in the map, set by map_rotater.gd
+var progress_cap: int 
 var shape_size: float
 @onready var collision_shape_player := $CollisionShape2D
 @onready var collision_shape_area2d := $Area2D/CollisionShape2D
@@ -34,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+# slime merging
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == self:
 		return
@@ -43,7 +48,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			# increase size to match combined area
 			shape_size = sqrt((shape_size ** 2.0) + (body.shape_size ** 2.0))
 			sprite.scale = Vector2((shape_size + 1) * 0.01, (shape_size + 1) * 0.01)
-			print(sprite.scale)
 			collision_shape_player.shape.size = Vector2(shape_size, shape_size)
 			collision_shape_area2d.shape.size = Vector2(shape_size + 1, shape_size + 1)
+			progress += 1 + body.progress
+			# - 1 because progress_cap is max slimes, but the last one is win
+			if progress >= progress_cap - 1:
+				print("you win nerd")
 			body.queue_free()
