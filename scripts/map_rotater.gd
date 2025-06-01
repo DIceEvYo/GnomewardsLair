@@ -15,9 +15,9 @@ var player_slime_scene: PackedScene = preload("res://scenes/player_slime.tscn")
 func _ready() -> void:
 	current_level = levels[0].instantiate()
 	add_child(current_level)
-	# 32x32 tilemap with 16x16 tiles = 512x512.
-	# all maps should be 32x32 to remain centered/on screen.
-	current_level.position = Vector2(-256, -256)
+	# 43x43 tilemap with 16x16 tiles = 688x688.
+	# all maps should be 43x43 to remain centered/on screen.
+	current_level.position = Vector2(-344, -344)
 	
 	var spawn_tile_coords: Array[Vector2i] = current_level.get_used_cells_by_id(1)
 	for i in spawn_tile_coords.size():
