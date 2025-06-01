@@ -25,6 +25,7 @@ func _ready() -> void:
 		add_child(player_slime)
 		# this is quite the wombo combo, not pretty but it gets the job done
 		player_slime.global_position = current_level.to_global(current_level.map_to_local(spawn_tile_coords[i]))
+		player_slime.progress_cap = spawn_tile_coords.size()
 
 
 func _input(event: InputEvent) -> void:
