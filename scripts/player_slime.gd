@@ -21,14 +21,13 @@ var previous_y: float = 0
 var progress: int = 0
 # based on how many slimes there are in the map, set by map_rotater.gd
 var progress_cap: int 
-var shape_size: float
+var shape_size: Vector2
 @onready var collision_shape_player := $CollisionShape2D
 @onready var collision_shape_area2d := $Area2D/CollisionShape2D
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	sprite.texture = load(EWW[form])
-	shape_size = collision_shape_player.shape.size.x
 	# add a little randomness to the shader
 	sprite.set_instance_shader_parameter("meltness", randf_range(1.8, 2.2))
 	sprite.set_instance_shader_parameter("how_deep", randf_range(0.8, 1.2))
@@ -61,16 +60,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				var 俺のtexture = $Sprite2D.texture
 				var bruh_texture = body.get_node("Sprite2D").texture
 				if 俺のtexture == bruh_texture:
-					# increase size to match combined area
-					shape_size = sqrt((shape_size ** 2.0) + (body.shape_size ** 2.0))
-					sprite.scale = Vector2((shape_size*5.88 + 1) * 0.01, (shape_size*5.88 + 1) * 0.01)
-					collision_shape_player.shape.size = Vector2(shape_size, shape_size)
-					collision_shape_area2d.shape.size = Vector2(shape_size + 1, shape_size + 1)
 					progress += 1 + body.progress
 					body.queue_free()
 					if form < EWW.size()-1:
 						form += 1
 						sprite.texture = load(EWW[form])
+						shape_size = sprite.texture.get_size()
+						collision_shape_player.shape.size =  Vector2(shape_size.x - 7.0, shape_size.y - 7.0)
+						collision_shape_area2d.shape.size = Vector2(shape_size.x - 6.0, shape_size.y - 6.0)
 					
 			# - 1 because progress_cap is max slimes, but the last one is win
 			if progress >= progress_cap - 1:
