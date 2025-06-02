@@ -70,5 +70,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 					
 			# - 1 because progress_cap is max slimes, but the last one is win
 			if form == EWW.size()-1 or progress >= progress_cap - 1:
-				print("you win nerd")
+				get_tree().change_scene_to_file("res://scenes/winner.tscn")
 			
