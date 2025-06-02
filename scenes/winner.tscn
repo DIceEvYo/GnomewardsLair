@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyshgt2hnc3b0"]
+
+[ext_resource type="Script" uid="uid://b2m8ccnk73iec" path="res://scripts/winner.gd" id="1_74nyh"]
+[ext_resource type="Texture2D" uid="uid://dfkfnr0hge7f0" path="res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx.png" id="2_e4a6r"]
+[ext_resource type="Texture2D" uid="uid://pxsp10kboosa" path="res://assets/lair_brick4.png" id="3_clhvm"]
+[ext_resource type="FontFile" uid="uid://b3x0ikt1kqsq4" path="res://assets/PressStart2P-Regular.ttf" id="4_l3l3v"]
+[ext_resource type="Texture2D" uid="uid://dyrtu4faqcv0c" path="res://assets/gnomewardpx.png" id="5_414y7"]
+
+[node name="Winner" type="Node2D"]
+script = ExtResource("1_74nyh")
+
+[node name="SLIME" type="CharacterBody2D" parent="."]
+
+[node name="Slimepx" type="Sprite2D" parent="SLIME"]
+texture_filter = 1
+position = Vector2(-131, 356)
+scale = Vector2(6.07558, 6)
+texture = ExtResource("2_e4a6r")
+
+[node name="ghettonode" type="Node" parent="."]
+
+[node name="LairBrick4" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(49, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick5" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(151, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick6" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(252, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick7" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(353, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick8" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(455, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick9" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(557, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick10" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(659, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick11" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(761, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick12" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(862, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick13" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(963, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick14" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1065, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick15" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1167, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick16" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1268, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 403.0
+offset_top = 59.0
+offset_right = 939.0
+offset_bottom = 139.0
+theme_override_fonts/normal_font = ExtResource("4_l3l3v")
+theme_override_font_sizes/normal_font_size = 64
+text = "You Win!"
+
+[node name="Gnomewardpx" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1500, 317)
+scale = Vector2(3.47687, 3.47687)
+texture = ExtResource("5_414y7")
