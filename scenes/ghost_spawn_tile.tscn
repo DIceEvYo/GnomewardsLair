@@ -1,3 +1,4 @@
 [gd_scene format=3 uid="uid://6tof0ank4e37"]
 
 [node name="GhostSpawnTile" type="Marker2D"]
+modulate = Color(1, 0.0862745, 1, 1)
