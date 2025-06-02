@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bowptdnlkcy3i"]
 
-[ext_resource type="Texture2D" uid="uid://xw5ni7bs7yh7" path="res://assets/spikes.png" id="1_5pg7g"]
 [ext_resource type="Script" uid="uid://0gx8052ogg1i" path="res://scripts/spikes.gd" id="1_xbcdo"]
+[ext_resource type="Texture2D" uid="uid://bhjdmc65ntpip" path="res://assets/spikes2.png" id="2_bflj7"]
 [ext_resource type="AudioStream" uid="uid://cxa4uokb6yhph" path="res://assets/lose.wav" id="3_bflj7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbcdo"]
@@ -18,7 +18,7 @@ script = ExtResource("1_xbcdo")
 shape = SubResource("CircleShape2D_xbcdo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5pg7g")
+texture = ExtResource("2_bflj7")
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_bflj7")
