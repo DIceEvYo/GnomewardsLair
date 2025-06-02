@@ -40,10 +40,10 @@ func _rotate_tween(rotate_to: float) -> void:
 	ignore_input = false
 	
 
-#func _on_area_2d_body_entered(body: Node2D) -> void:
-	#if body is PlayerSlime and is_player_alive:
-		#is_player_alive = false
-		#$LoseSound.play()
-		#get_node("/root/Game/lose_screen").visible = true
-		#await $LoseSound.finished
-		#get_tree().call_deferred("reload_current_scene")
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is PlayerSlime and is_player_alive:
+		is_player_alive = false
+		$LoseSound.play()
+		get_node("/root/Game/lose_screen").visible = true
+		await $LoseSound.finished
+		get_tree().call_deferred("reload_current_scene")

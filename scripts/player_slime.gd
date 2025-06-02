@@ -4,7 +4,6 @@ class_name PlayerSlime
 var EWW = [
 	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx4.png",
 	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx3.png",
-	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx2.png",
 	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx1.png",
 	"res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx.png",
 ]
@@ -70,6 +69,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 						collision_shape_area2d.shape.size = Vector2(shape_size.x - 6.0, shape_size.y - 6.0)
 					
 			# - 1 because progress_cap is max slimes, but the last one is win
-			if progress >= progress_cap - 1:
+			if form == EWW.size()-1 or progress >= progress_cap - 1:
 				print("you win nerd")
 			
