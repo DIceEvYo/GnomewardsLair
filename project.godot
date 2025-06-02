@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gnomeward's Lair"
-run/main_scene="uid://cwn2vdc6cpjns"
+run/main_scene="uid://b7bs8a8qpk52i"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

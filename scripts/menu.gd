@@ -5,12 +5,13 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	%Words.text = "WRONG CHOICE"
-	$Timer.start(1)
+	%Timer.start(1)
 
 
 func _on_button_2_pressed() -> void:
 	%Words.text = "WRONG CHOICE"
+	%Timer.start(1)
 
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
