@@ -12,7 +12,7 @@ var EWW = [
 var form = 0
 
 var bounce_strength: float = 0.5
-var friction: float = 20
+var friction: float = 70
 # used to help calculate bounce
 var previous_y: float = 0
 
@@ -20,7 +20,7 @@ var previous_y: float = 0
 var progress: int = 0
 # based on how many slimes there are in the map, set by map_rotater.gd
 var progress_cap: int 
-var shape_size: Vector2
+var shape_radius: float
 @onready var collision_shape_player := $CollisionShape2D
 @onready var collision_shape_area2d := $Area2D/CollisionShape2D
 @onready var sprite: Sprite2D = $Sprite2D
@@ -64,9 +64,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 					if form < EWW.size()-1:
 						form += 1
 						sprite.texture = load(EWW[form])
-						shape_size = sprite.texture.get_size()
-						collision_shape_player.shape.size =  Vector2(shape_size.x - 7.0, shape_size.y - 7.0)
-						collision_shape_area2d.shape.size = Vector2(shape_size.x - 6.0, shape_size.y - 6.0)
+						shape_radius = sprite.texture.get_size().x / 2
+						collision_shape_player.shape.radius =  shape_radius - 6.0
+						collision_shape_area2d.shape.radius = shape_radius - 5.0
 					
 			# - 1 because progress_cap is max slimes, but the last one is win
 			if form == EWW.size()-1 or progress >= progress_cap - 1:

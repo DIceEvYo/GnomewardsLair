@@ -1,0 +1,27 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bgrmvj3uhhj0x"]
+
+[ext_resource type="Texture2D" uid="uid://pxsp10kboosa" path="res://assets/lair_brick4.png" id="1_jpsvt"]
+[ext_resource type="PackedScene" uid="uid://b8onvyhjlk33y" path="res://scenes/player_slime_spawn_tile.tscn" id="2_n0b6b"]
+[ext_resource type="PackedScene" uid="uid://6tof0ank4e37" path="res://scenes/ghost_spawn_tile.tscn" id="3_pews6"]
+[ext_resource type="PackedScene" uid="uid://bowptdnlkcy3i" path="res://scenes/spikes.tscn" id="4_k4qjw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa8r4"]
+texture = ExtResource("1_jpsvt")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rus8k"]
+scenes/1/scene = ExtResource("2_n0b6b")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4nkto"]
+scenes/1/scene = ExtResource("3_pews6")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5xbjy"]
+scenes/1/scene = ExtResource("4_k4qjw")
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetScenesCollectionSource_rus8k")
+sources/0 = SubResource("TileSetAtlasSource_pa8r4")
+sources/3 = SubResource("TileSetScenesCollectionSource_5xbjy")
+sources/2 = SubResource("TileSetScenesCollectionSource_4nkto")
