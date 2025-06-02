@@ -5,6 +5,7 @@ extends Node2D
 
 var current_level: TileMapLayer
 var levels: Array[PackedScene] = [
+	preload("res://scenes/level_1.tscn"),
 	preload("res://scenes/level_2.tscn"),
 ]
 # used to prevent spam rotation
@@ -14,7 +15,7 @@ var player_slime_scene: PackedScene = preload("res://scenes/player_slime.tscn")
 var ghost_scene: PackedScene = preload("res://scenes/ghost.tscn")
 
 func _ready() -> void:
-	current_level = levels[0].instantiate()
+	current_level = levels[Global.current_level].instantiate()
 	add_child(current_level)
 	# 43x43 tilemap with 16x16 tiles = 688x688.
 	# all maps should be 43x43 to remain centered/on screen.
