@@ -5,7 +5,7 @@ extends Node2D
 
 var current_level: TileMapLayer
 var levels: Array[PackedScene] = [
-	preload("res://scenes/level_1.tscn"),
+	preload("res://scenes/level_2.tscn"),
 ]
 # used to prevent spam rotation
 var ignore_input := false
