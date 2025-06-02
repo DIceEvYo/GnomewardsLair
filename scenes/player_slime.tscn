@@ -1,19 +1,17 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4tvmqu3n6wjt"]
 
 [ext_resource type="Script" uid="uid://dithippvnjacp" path="res://scripts/player_slime.gd" id="1_531f3"]
-[ext_resource type="Texture2D" uid="uid://pp16p10q57vf" path="res://icon.svg" id="1_j6t72"]
 [ext_resource type="Shader" uid="uid://dgrep8wp0pdkf" path="res://scripts/player_slime.gdshader" id="2_fj311"]
+[ext_resource type="Texture2D" uid="uid://bwnrfs22x073r" path="res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx4.png" id="3_fj311"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y7wq0"]
 shader = ExtResource("2_fj311")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_531f3"]
-resource_local_to_scene = true
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_fj311"]
+radius = 13.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj311"]
-resource_local_to_scene = true
-size = Vector2(17, 17)
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7wq0"]
+radius = 14.0
 
 [node name="PlayerSlime" type="CharacterBody2D"]
 collision_layer = 2
@@ -22,12 +20,12 @@ platform_floor_layers = 4294967293
 script = ExtResource("1_531f3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 material = SubResource("ShaderMaterial_y7wq0")
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("1_j6t72")
+texture = ExtResource("3_fj311")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_531f3")
+shape = SubResource("CircleShape2D_fj311")
 debug_color = Color(0, 0.6, 0.701961, 0.741176)
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -36,7 +34,7 @@ collision_mask = 6
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_fj311")
+shape = SubResource("CircleShape2D_y7wq0")
 debug_color = Color(0.965892, 0.165891, 0.215202, 0.42)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

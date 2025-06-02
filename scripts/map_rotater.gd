@@ -6,18 +6,20 @@ extends Node2D
 var current_level: TileMapLayer
 var levels: Array[PackedScene] = [
 	preload("res://scenes/level_1.tscn"),
+	preload("res://scenes/level_2.tscn"),
 ]
 # used to prevent spam rotation
 var ignore_input := false
 
 var player_slime_scene: PackedScene = preload("res://scenes/player_slime.tscn")
+var ghost_scene: PackedScene = preload("res://scenes/ghost.tscn")
 
 func _ready() -> void:
-	current_level = levels[0].instantiate()
+	current_level = levels[Global.current_level].instantiate()
 	add_child(current_level)
-	# 32x32 tilemap with 16x16 tiles = 512x512.
-	# all maps should be 32x32 to remain centered/on screen.
-	current_level.position = Vector2(-256, -256)
+	# 43x43 tilemap with 16x16 tiles = 688x688.
+	# all maps should be 43x43 to remain centered/on screen.
+	current_level.position = Vector2(-344, -344)
 	
 	var spawn_tile_coords: Array[Vector2i] = current_level.get_used_cells_by_id(1)
 	for i in spawn_tile_coords.size():
@@ -25,6 +27,13 @@ func _ready() -> void:
 		add_child(player_slime)
 		# this is quite the wombo combo, not pretty but it gets the job done
 		player_slime.global_position = current_level.to_global(current_level.map_to_local(spawn_tile_coords[i]))
+		player_slime.progress_cap = spawn_tile_coords.size()
+	var ghost_spawn_coords: Array[Vector2i] = current_level.get_used_cells_by_id(2)
+	for i in ghost_spawn_coords.size():
+		var ghost: CharacterBody2D = ghost_scene.instantiate()
+		add_child(ghost)
+		ghost.global_position = current_level.to_global(current_level.map_to_local(ghost_spawn_coords[i]))
+		
 
 
 func _input(event: InputEvent) -> void:

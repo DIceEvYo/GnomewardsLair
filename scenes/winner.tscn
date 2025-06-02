@@ -1,0 +1,338 @@
+[gd_scene load_steps=12 format=3 uid="uid://dyshgt2hnc3b0"]
+
+[ext_resource type="Script" uid="uid://b2m8ccnk73iec" path="res://scripts/winner.gd" id="1_74nyh"]
+[ext_resource type="Texture2D" uid="uid://dfkfnr0hge7f0" path="res://assets/DISGUSTINGSLIMEBOYEWWWDONTTOUCHTHISFOLDERPUKEEMOJIPUKEEMOJI/slimepx.png" id="2_e4a6r"]
+[ext_resource type="Texture2D" uid="uid://pxsp10kboosa" path="res://assets/lair_brick4.png" id="3_clhvm"]
+[ext_resource type="FontFile" uid="uid://b3x0ikt1kqsq4" path="res://assets/PressStart2P-Regular.ttf" id="4_l3l3v"]
+[ext_resource type="Texture2D" uid="uid://dyrtu4faqcv0c" path="res://assets/gnomewardpx.png" id="5_414y7"]
+[ext_resource type="Script" uid="uid://ciw7li1fcl8th" path="res://scripts/gnomiehomie.gd" id="5_clhvm"]
+[ext_resource type="Texture2D" uid="uid://bxhumcb450alx" path="res://assets/pixelbubble.png" id="6_e4a6r"]
+[ext_resource type="AudioStream" uid="uid://breij6jb1u680" path="res://assets/slice.mp3" id="6_q2sv6"]
+[ext_resource type="AudioStream" uid="uid://cxa4uokb6yhph" path="res://assets/lose.wav" id="8_6naxy"]
+[ext_resource type="Texture2D" uid="uid://jw5cixyktqxc" path="res://assets/gnomewardpxholyshttt.png" id="9_6naxy"]
+[ext_resource type="Texture2D" uid="uid://gc4ts5r2ajle" path="res://assets/makkuro.png" id="9_m6rno"]
+
+[node name="Winner" type="Node2D"]
+script = ExtResource("1_74nyh")
+
+[node name="YOUWINCOOL" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+z_index = 1
+offset_left = 403.0
+offset_top = 18.0
+offset_right = 939.0
+offset_bottom = 98.0
+theme_override_fonts/normal_font = ExtResource("4_l3l3v")
+theme_override_font_sizes/normal_font_size = 64
+text = "You Win!"
+
+[node name="SLIME" type="CharacterBody2D" parent="."]
+
+[node name="Slimepx" type="Sprite2D" parent="SLIME"]
+texture_filter = 1
+position = Vector2(-131, 356)
+scale = Vector2(6.07558, 6)
+texture = ExtResource("2_e4a6r")
+
+[node name="ghettonode" type="Node" parent="."]
+
+[node name="LairBrick4" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(49, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick5" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(151, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick6" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(252, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick7" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(353, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick8" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(455, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick9" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(557, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick10" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(659, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick11" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(761, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick12" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(862, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick13" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(963, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick14" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1065, 587)
+rotation = 0.0220257
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick15" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1167, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick16" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1268, 587)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick17" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(49, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick18" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(151, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick19" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(252, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick20" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(353, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick21" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(455, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick22" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(557, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick23" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(659, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick24" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(761, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick25" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(862, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick26" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(963, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick27" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1065, 687.111)
+rotation = 0.0220257
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick28" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1167, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick29" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1268, 687.111)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick30" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(49, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick31" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(151, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick32" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(252, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick33" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(353, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick34" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(455, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick35" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(557, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick36" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(659, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick37" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(761, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick38" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(862, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick39" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(963, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick40" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1065, 51.1109)
+rotation = 0.0220257
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick41" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1167, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="LairBrick42" type="Sprite2D" parent="ghettonode"]
+texture_filter = 1
+position = Vector2(1268, 51.1108)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("3_clhvm")
+
+[node name="GNOMIEHOMIE" type="CharacterBody2D" parent="."]
+position = Vector2(1500, 317)
+scale = Vector2(3.47687, 3.47687)
+script = ExtResource("5_clhvm")
+
+[node name="Slicey" type="AudioStreamPlayer2D" parent="GNOMIEHOMIE"]
+position = Vector2(-431.423, -91.174)
+scale = Vector2(0.287615, 0.287615)
+stream = ExtResource("6_q2sv6")
+
+[node name="Timer" type="Timer" parent="GNOMIEHOMIE"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Gnomewardpx" type="Sprite2D" parent="GNOMIEHOMIE"]
+texture_filter = 1
+texture = ExtResource("5_414y7")
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="GNOMIEHOMIE"]
+stream = ExtResource("8_6naxy")
+volume_db = -17.0
+
+[node name="Gnomewardpxholyshttt" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 5
+texture_filter = 1
+position = Vector2(591, 612)
+scale = Vector2(11.1458, 11.1458)
+texture = ExtResource("9_6naxy")
+
+[node name="Makkuro" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 4
+position = Vector2(709.5, 397.5)
+scale = Vector2(33.0156, 14.8906)
+texture = ExtResource("9_m6rno")
+
+[node name="Pixelbubble" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(883, 164)
+scale = Vector2(5.58681, 5.58681)
+texture = ExtResource("6_e4a6r")
+
+[node name="bubbly" type="RichTextLabel" parent="Pixelbubble"]
+visible = false
+z_index = 2
+texture_filter = 1
+offset_left = -21.0
+offset_top = -20.0
+offset_right = 29.0
+offset_bottom = 37.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_l3l3v")
+theme_override_font_sizes/normal_font_size = 6
+fit_content = true
+scroll_active = false
+
+[connection signal="timeout" from="GNOMIEHOMIE/Timer" to="GNOMIEHOMIE" method="_on_timer_timeout"]

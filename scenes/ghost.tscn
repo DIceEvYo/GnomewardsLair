@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxghu45gocj7f"]
+
+[ext_resource type="Script" uid="uid://bnm3wgss2w3rs" path="res://scripts/ghost.gd" id="1_t76o2"]
+[ext_resource type="Texture2D" uid="uid://bviu42ht4prk0" path="res://assets/ghostttpx.png" id="2_l5lq6"]
+[ext_resource type="AudioStream" uid="uid://cxa4uokb6yhph" path="res://assets/lose.wav" id="3_bbnym"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l5lq6"]
+radius = 13.0
+height = 58.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbnym"]
+radius = 26.4764
+
+[node name="Ghost" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+platform_floor_layers = 4294967293
+script = ExtResource("1_t76o2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_l5lq6")
+
+[node name="Ghostttpx" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_l5lq6")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bbnym")
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bbnym")
+volume_db = -17.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
