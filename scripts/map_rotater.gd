@@ -11,6 +11,7 @@ var levels: Array[PackedScene] = [
 var ignore_input := false
 
 var player_slime_scene: PackedScene = preload("res://scenes/player_slime.tscn")
+var ghost_scene: PackedScene = preload("res://scenes/ghost.tscn")
 
 func _ready() -> void:
 	current_level = levels[0].instantiate()
@@ -26,6 +27,12 @@ func _ready() -> void:
 		# this is quite the wombo combo, not pretty but it gets the job done
 		player_slime.global_position = current_level.to_global(current_level.map_to_local(spawn_tile_coords[i]))
 		player_slime.progress_cap = spawn_tile_coords.size()
+	var ghost_spawn_coords: Array[Vector2i] = current_level.get_used_cells_by_id(2)
+	for i in ghost_spawn_coords.size():
+		var ghost: CharacterBody2D = ghost_scene.instantiate()
+		add_child(ghost)
+		ghost.global_position = current_level.to_global(current_level.map_to_local(ghost_spawn_coords[i]))
+		
 
 
 func _input(event: InputEvent) -> void:
