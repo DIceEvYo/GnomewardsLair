@@ -35,5 +35,6 @@ shape = SubResource("CircleShape2D_bbnym")
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_bbnym")
+volume_db = -17.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
