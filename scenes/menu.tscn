@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7bs8a8qpk52i"]
+
+[ext_resource type="FontFile" uid="uid://b3x0ikt1kqsq4" path="res://assets/PressStart2P-Regular.ttf" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://dyrtu4faqcv0c" path="res://assets/gnomewardpx.png" id="2_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://bxhumcb450alx" path="res://assets/pixelbubble.png" id="3_4ytvr"]
+[ext_resource type="Script" uid="uid://dv8mvkmsywjav" path="res://scripts/menu.gd" id="4_mhnvy"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="Words" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+z_index = 1
+offset_left = 483.0
+offset_top = 93.0
+offset_right = 801.0
+offset_bottom = 352.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_con2f")
+theme_override_font_sizes/normal_font_size = 17
+text = "If there was a trolly racing at a group of 5 robotic cats with sentience or 3 babies and 1 dog, where one of the babies will grow up to become an evil dictator and take over the world, who would you choose to save?"
+fit_content = true
+scroll_active = false
+
+[node name="Gnomewardpx" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(292, 474)
+scale = Vector2(3.68359, 3.68359)
+texture = ExtResource("2_mhnvy")
+
+[node name="Pixelbubble" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(634, 224)
+scale = Vector2(6.89063, 6.89063)
+texture = ExtResource("3_4ytvr")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 964.0
+offset_top = 450.0
+offset_right = 1084.0
+offset_bottom = 481.0
+scale = Vector2(2.56, 2.56)
+theme_override_fonts/font = ExtResource("1_con2f")
+text = "5 cats"
+script = ExtResource("4_mhnvy")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 523.0
+offset_top = 550.0
+offset_right = 826.0
+offset_bottom = 581.0
+scale = Vector2(2.48, 2.48)
+theme_override_fonts/font = ExtResource("1_con2f")
+text = "3 babies and 1 dog"
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button" method="_on_button_2_pressed"]
+[connection signal="timeout" from="Timer" to="Button" method="_on_timer_timeout"]

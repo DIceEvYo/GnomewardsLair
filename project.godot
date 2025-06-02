@@ -52,3 +52,4 @@ rotate_right={
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.230073, 0.223319, 0.289401, 1)
